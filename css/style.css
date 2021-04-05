@@ -1,0 +1,936 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Montserrat Medium';
+  src: url(../font/FontsFree-Net-Montserrat-Medium.ttf);
+}
+
+:root {
+  font-size: 100%;
+  /* 0.625rem 10px */
+  /* 0.875rem 14px */
+  --f3: 2em;        /* 32px　小見出し */
+  --f2: 1em;        /* 16px　本文 */
+  --f1: 0.75em;     /* 12px　ボタン*/
+
+  --textcolor: #333333; /* 本文の色 */
+  --bgcolor: #f0f0f0; /* 背景の色（グレー） */
+
+  --montserrat: 'Montserrat', sans-serif; /*装飾フォントその１*/
+  --notosans: 'Noto Sans JP', sans-serif; /*装飾フォントその２*/
+}
+
+body {
+  font-family: 'Yu Gothic Medium', 'YuGothic Medium', sans-serif;
+  color: var(--textcolor);
+}
+
+h2 {
+  font-family: var(--montserrat);
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.068em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main section:nth-of-type(2n) {
+  background-color: var(--bgcolor);
+}
+
+.btn-br {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #000;
+  font-family: 'Montserrat Medium', sans-serif;
+  font-weight: bold;
+  font-size: var(--f1);
+  color: #fff;
+}
+
+button.text-after {
+  margin-top: 60px;
+}
+
+
+
+/* ヘッダー */
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+header {
+  height: 51vw;
+  max-height: 740px;
+  background: linear-gradient(90deg, transparent 45%, #000 45%, #000 100%);
+  position: relative;
+}
+
+.header-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76%;
+}
+
+.header-visual img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.header-text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.catch-1, .catch-2 {
+  font-size: 1.39vw;
+  font-weight: bold;
+}
+
+.catch-2 {
+  font-family: 'Montserrat Medium', sans-serif;
+}
+
+.header-text p {
+  font-family: var(--montserrat);
+  font-weight: 800;
+  font-size: 5vw;
+  line-height: 1.2;
+}
+
+/* ロゴとメニュー */
+.header-flex {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 4%;
+}
+
+h1 a {
+  display: block;
+  width: 260px;
+  height: 29px;
+  background: url(../img/site-logo@2x.png);
+  background-size: 100% 100%;
+}
+
+.header-flex nav {
+  color: #fff;
+}
+
+.menu-btn {
+  cursor: pointer;
+  font-family: var(--montserrat);
+  font-weight: 800;
+  font-size: 0.625rem;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-btn::before {
+  content: url(../img/btn_trigger.png);
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+.menu-btn.active {
+  position: fixed;
+  top: 38px;
+  right: 4%;
+}
+
+.menu-btn.active::before {
+  content: url(../img/btn_trigger_active.png);
+  vertical-align: middle;
+}
+
+.menu-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 36%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.95);
+  z-index: 100;
+  transform: translate(100%, 0);
+  transition: transform .3s cubic-bezier(0, 0, 0.18, 1.0);
+}
+
+.menu-layer.active {
+  transform: translate(0, 0);
+}
+
+.menu-layer ul {
+  font-family: var(--montserrat);
+  font-weight: 800;
+  font-size: 1.25rem;
+  width: 120px;
+  margin: 20vh auto 0;
+  text-align: center;
+}
+
+.menu-layer ul li {
+  margin-top: 20px;
+} .menu-layer ul li:nth-of-type(1) {
+  margin-top: 30px;
+}
+
+.logo-mini {
+  display: inline-block;
+  width: 42px;
+  height: 45px;
+  background: url(../img/site-logo@2x.png);
+  background-size: cover;
+}
+
+
+
+/* 最初のセクション */
+.section-inner {
+  width: 95%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#about-us .section-inner {
+  width: 100%;
+}
+
+#about-us {
+  margin-top: 29px;
+}
+
+#about-us figure {
+  position: relative;
+}
+
+#about-us figure img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.about-us-box {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translate(0, -50%);
+  box-sizing: border-box;
+  width: 590px;
+  padding: 50px 30px;
+  background-color: rgba(255, 255, 255, 0.95)
+}
+
+.about-us-box p {
+  font-family: var(--notosans);
+}
+
+/* 二番目のセクション */
+#works-culture {
+  padding: 12.5vw 0 60px;
+}
+
+.wc-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wc-box {
+  width: 47%;
+}
+
+.wc-box img {
+  width: 100%;
+  max-width: 580px;
+}
+
+.wc-box p {
+  margin: 25px 0;
+}
+
+/* 三番目のセクション */
+#latest-topics {
+  padding: 60px 0;
+}
+
+#latest-topics dl {
+  width: 700px;
+  margin: 0 0 30px auto;
+}
+
+#latest-topics dl dt {
+  color: rgb(206, 206, 206);
+  font-family: 'Montserrat Medium', sans-serif;
+  font-weight: bold;
+  font-size: 0.625rem;
+}
+
+#latest-topics dl dd {
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  margin: 10px 0 30px;
+}
+
+.btn-right {
+  text-align: right;
+}
+
+/* 四番目のセクション */
+#contact {
+  padding: 60px 0 8.3vw;
+}
+
+#contact .section-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-text {
+  width: 40%;
+}
+
+.contact-text p {
+  margin-bottom: 30px;
+}
+
+#contact figure {
+  width: 52.7%;
+}
+
+#contact figure img {
+  width: 100%;
+}
+
+/* フッター */
+footer {
+  background-color: rgb(82, 82, 82);
+  color: #fff;
+  padding: 18px;
+}
+
+.copyright {
+  text-align: center;
+  font-family: 'Montserrat Medium', sans-serif;
+  font-size: 0.625rem;
+}
+
+.black-layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+
+
+
+/* aboutページ */
+/* ヘッダー */
+header.under-page {
+  height: 32.2vw;
+  max-height: 464px;
+  background: linear-gradient(90deg, transparent 45%, #000 45%, #000 100%);
+}
+
+.under-page .header-text {
+  transform: translate(40%, -50%);
+}
+
+.under-page .catch-1 {
+  font-family: var(--notosans);
+  font-size: 16px;
+}
+
+.under-page .header-text p {
+  font-family: var(--montserrat);
+  font-weight: 800;
+  font-size: 5vw;
+  line-height: 1.2;
+  letter-spacing: 0.063em;
+}
+
+/* メイン */
+#about main p {
+  margin: 2em 0;
+  line-height: 2;
+  font-family: var(--notosans);
+}
+
+#about .ceo-text p {
+  margin: 2.22vw 0;
+}
+
+#about .vision-inner p:last-of-type,
+#about .ceo-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+#vision {
+  padding: 120px 0;
+}
+
+.vision-inner {
+  margin-left: 21%;
+}
+
+#ceo-message {
+  background-color: #fff;
+}
+
+#ceo-message .section-inner {
+  position: relative;
+  height: 81.8vw;
+  max-height: 900px;
+}
+
+.ceo-text-wrap {
+  background-color: var(--bgcolor);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 84%;
+}
+
+.ceo-text {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84%;
+  max-width: 400px;
+}
+
+#ceo-message .section-inner img {
+  position: relative;
+  width: 38.2%;
+}
+
+#company {
+  padding: 120px 0;
+}
+
+#company hr {
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+#company ul {
+  width: 96%;
+  max-width: 800px;
+  margin: 0 0 0 auto;
+}
+
+#company li {
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.com-data {
+  display: inline-block;
+  width: 144px;
+  font-weight: bold;
+}
+
+.gmap iframe {
+  width: 100%;
+  margin-top: 40px;
+}
+
+
+
+/* contactページ */
+.contact-kv-resp {
+  display: none;
+}
+
+.contact-page .under-page .header-text {
+  transform: translate(48%, -50%);
+}
+
+#contact-form {
+  padding: 120px 0;
+}
+
+#contact-form .section-inner {
+  width: 90%;
+}
+
+.form-inner {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--notosans);
+}
+
+.form-inner form {
+  margin-top: 50px;
+}
+
+.form-inner form label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.type-wrap p {
+  margin-bottom: 18px;
+}
+
+.required {
+  color: #fff;
+  background-color: #333333;
+  font-size: var(--f1);
+  line-height: 1;
+  margin-left: 25px;
+  padding: 0 5px;
+  font-weight: normal;
+}
+
+.type-wrap label {
+  margin-right: 50px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+.text-group textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #333333;
+  padding: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  height: 41px;
+}
+
+.text-group textarea {
+  height: 212px;
+}
+
+.text-group label {
+  margin: 42px 0 8px;
+}
+
+.pp-wrap {
+  margin-top: 40px;
+}
+
+.pp-heading {
+  font-family: var(--montserrat);
+  font-weight: 800;
+}
+
+.pp-box {
+  margin-top: 10px;
+  box-sizing: border-box;
+  height: 252px;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  overflow-y: scroll;
+}
+
+.pp-box p {
+  margin-bottom: 1.5em;
+}
+
+.check-wrap,
+.btn-center {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.check-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.check-wrap input {
+  display: inline-block;
+  margin: 6px 10px 0 0;
+}
+
+button[type="submit"] {
+  font-size: 0.875rem;
+  padding: 10px 65px;
+}
+
+
+
+/* レスポンシブデザイン（タブレット用） */
+@media screen and (max-width: 768px) {
+  header {
+    height: 133vw;
+    max-height: none;
+    background: linear-gradient(90deg, transparent 27%, #000 27%, #000 100%);
+  }
+
+  .header-visual {
+    width: 78%;
+    height: 115.9vw;
+  }
+
+  .header-visual img {
+    height: 100%;
+    object-fit: cover;
+    object-position: 48% 50%;
+  }
+
+  .catch-1, .catch-2 {
+    font-size: 16px;
+  }
+
+  .header-text,
+  .under-page .header-text {
+    transform: translate(29%, -50%);
+  }
+
+  .header-text p {
+    font-size: 56px;
+    letter-spacing: 0.063em;
+    line-height: 0.95;
+  }
+
+  h1 a {
+    width: 190px;
+    height: 20px;
+  }
+
+  #about-us {
+    margin-top: 80px;
+  }
+
+  #about-us figure img {
+    height: 479px;
+    object-fit: cover;
+  }
+
+  .about-us-box {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76.8%;
+    padding: 40px 30px;
+  }
+
+  .wc-flex {
+    display: block;
+  }
+
+  .wc-box {
+    width: 100%;
+  }
+
+  .wc-box:nth-of-type(n+2) {
+    margin-top: 80px;
+  }
+
+  #latest-topics {
+    padding: 40px 0;
+  }
+
+  #latest-topics dl {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn-right {
+    text-align: left;
+  }
+
+  #contact {
+    padding: 40px 0 80px;
+  }
+
+  #contact .section-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-text {
+    order: 2;
+    margin: 30px 0 0 0;
+    width: 100%;
+    max-width: 580px;
+    min-width: auto;
+  }
+
+  #contact figure {
+    width: 100%;
+    max-width: 580px;
+  }
+
+  #contact img {
+    order: 1;
+  }
+
+  header.under-page {
+    height: 80vw;
+    max-height: 615px;
+    background: linear-gradient(90deg, transparent 48.14%, #000 48.14%, #000 100%);
+  }
+
+  .under-page .header-visual {
+    width: 76.4%;
+    height: 68.9vw;
+  }
+
+  .under-page .catch-1 {
+    font-size: 2.1vw;
+  }
+
+  .under-page .header-text p {
+    font-size: 6.77vw;
+  }
+
+  #vision {
+    padding: 80px 0;
+  }
+
+  #about .vision-inner p {
+    font-size: 0.875rem;
+  }
+
+  #ceo-message .section-inner {
+    height: 818px;
+    max-height: none;
+  }
+
+  .ceo-text-wrap {
+    width: 100%;
+    max-width: 494px;
+    height: 687px;
+  }
+
+  #ceo-message .section-inner img {
+    width: 67.4%;
+    max-width: 320px;
+  }
+}
+
+/* レスポンシブデザイン（スマホ用） */
+@media screen and (max-width: 376px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  #about h2 {
+    font-size: var(--f3);
+  }
+
+  .section-inner {
+    width: 90%;
+  }
+
+  header {
+    height: 177vw;
+  }
+
+  .header-visual {
+    width: 78%;
+    height: 154.6vw;
+  }
+
+  #about-us figure img {
+    height: 541px;
+  }
+
+  .about-us-box {
+    width: 92%;
+  }
+
+  .about-us-box p {
+    font-size: 0.875rem;
+  }
+
+  #works-culture {
+    padding: 40px 0 60px;
+  }
+
+  .wc-box:nth-of-type(n+2) {
+    margin-top: 40px;
+  }
+
+  .wc-box img {
+    width: 100%;
+  }
+
+  #latest-topics dl dd {
+    font-size: var(--f1);
+  }
+
+  #contact {
+    padding: 40px 0;
+  }
+
+  #contact img {
+    width: 100%;
+  }
+
+  header.under-page {
+    height: 119.7vw;
+  }
+
+  .under-page .header-visual {
+    height: 103.2vw;
+  }
+
+  .under-page .header-text {
+    transform: translate(19%, -50%);
+  }
+
+  .under-page .catch-1 {
+    font-size: 4.26vw;
+  }
+
+  .under-page .header-text p {
+    font-size: 13.16vw;
+    letter-spacing: 0;
+  }
+
+  .vision-inner {
+    margin-left: 0;
+  }
+
+  #ceo-message .section-inner {
+    width: 95%;
+    height: 930px;
+  }
+
+  .ceo-text-wrap {
+    height: 800px;
+  }
+
+  .ceo-text {
+    top: 46%;
+  }
+
+  .ceo-text p {
+    font-size: 0.875rem;
+  }
+
+  #ceo-message .section-inner img {
+    width: 95%;
+    margin-left: -5%;
+  }
+
+  #company ul {
+    width: 100%;
+    margin: 0;
+  }
+
+  .com-data {
+    width: 114px;
+  }
+
+  .contact-page header.under-page {
+    height: 97.3vw;
+  }
+
+  .contact-page .under-page .header-visual {
+    height: 72vw;
+  }
+
+  .header-visual .contact-kv {
+    display: none;
+  }
+
+  .header-visual .contact-kv-resp {
+    display: block;
+  }
+
+  .contact-page .under-page .header-text {
+    transform: translate(23%, -50%);
+  }
+
+  .contact-page .under-page .catch-1 {
+    display: block;
+    text-align: right;
+  }
+
+  .contact-page .under-page .header-text p {
+    letter-spacing: 0.063em;
+  }
+
+  #contact-form {
+    padding: 80px 0;
+  }
+
+  #contact-form .section-inner {
+    width: 95%;
+  }
+
+  .type-wrap p {
+    font-weight: bold;
+  }
+
+  .form-inner .type-wrap label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .text-group label {
+    font-weight: bold;
+  }
+
+  .check-wrap label {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .catch-1, .catch-2 {
+    font-size: 1.25rem;
+  }
+
+  .header-text p {
+    font-size: 4.5rem;
+  }
+
+  #works-culture {
+    padding-top: 180px;
+  }
+
+  #contact {
+    padding: 60px 0 120px;
+  }
+
+  .under-page .header-text p {
+    font-size: 3.25rem;
+  }
+}
