@@ -153,21 +153,41 @@ h1 a {
   z-index: 1000;
 }
 
-.menu-btn::before {
-  content: url(../img/btn_trigger.png);
+.menu-bar {
+  display: inline-block;
+  width: 24px;
+  height: 14px;
   margin-right: 7px;
-  vertical-align: middle;
+  vertical-align: bottom;
+  position: relative;
 }
 
-/* .menu-btn.active {
-  position: fixed;
-  top: 38px;
-  right: 4%;
-} */
+.bar-top, .bar-middle, .bar-bottom {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  transition: 0.3s;
+} .bar-top {
+  top: 3%;
+} .bar-middle {
+  top: 50%;
+  transform: translateY(-50%);
+} .bar-bottom {
+  bottom: 0;
+}
 
-.menu-btn.active::before {
-  content: url(../img/btn_trigger_active.png);
-  vertical-align: middle;
+.bar-top.active {
+  top: 43%;
+  transform: rotate(45deg);
+}
+.bar-middle.active {
+  opacity: 0;
+}
+.bar-bottom.active {
+  bottom: 43%;
+  transform: rotate(-45deg);
 }
 
 .menu-layer {

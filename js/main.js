@@ -3,6 +3,9 @@ $(function() {
     $(this).toggleClass('active');
     $('.menu-layer').toggleClass('active');
     $('.header-flex').toggleClass('active');
+    $('.bar-top').toggleClass('active');
+    $('.bar-middle').toggleClass('active');
+    $('.bar-bottom').toggleClass('active');
     $('.black-layer').fadeToggle();
   });
 
@@ -10,6 +13,9 @@ $(function() {
     $('.menu-btn').toggleClass('active');
     $('.menu-layer').toggleClass('active');
     $('.header-flex').toggleClass('active');
+    $('.bar-top').toggleClass('active');
+    $('.bar-middle').toggleClass('active');
+    $('.bar-bottom').toggleClass('active');
     $(this).fadeToggle();
   });
 });
