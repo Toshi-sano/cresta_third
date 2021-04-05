@@ -120,7 +120,7 @@ header {
 
 /* ロゴとメニュー */
 .header-flex {
-  position: absolute;
+  position: fixed;
   top: 30px;
   left: 0;
   display: flex;
@@ -129,6 +129,7 @@ header {
   box-sizing: border-box;
   width: 100%;
   padding: 0 4%;
+  z-index: 10;
 }
 
 h1 a {
@@ -158,11 +159,11 @@ h1 a {
   vertical-align: middle;
 }
 
-.menu-btn.active {
+/* .menu-btn.active {
   position: fixed;
   top: 38px;
   right: 4%;
-}
+} */
 
 .menu-btn.active::before {
   content: url(../img/btn_trigger_active.png);
@@ -198,6 +199,11 @@ h1 a {
   margin-top: 20px;
 } .menu-layer ul li:nth-of-type(1) {
   margin-top: 30px;
+}
+
+.menu-layer ul li:nth-of-type(1) a:hover,
+.menu-layer ul li:nth-of-type(5) a:hover {
+  opacity: 0.5;
 }
 
 .logo-mini {
