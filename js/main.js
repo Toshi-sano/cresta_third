@@ -1,7 +1,9 @@
 $(function() {
-  var $window = $(window),
-      toggleHeight = $('.header-visual').outerHeight() - 30;
-
+  var $window = $(window);
+  
+  window.onload = function() {
+    var toggleHeight = $('.header-visual').outerHeight() - 30;
+  };
 
   // リサイズ時のtoggleHeightの変化を反映
   $window.on('resize', $.throttle(1000 / 15, function() {
@@ -34,5 +36,7 @@ $(function() {
       $('h1 a.another').removeClass('alternative');
     }
   }));
+  
+  $window.trigger('scroll');
 
 });
