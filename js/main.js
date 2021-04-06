@@ -35,5 +35,7 @@ $(function() {
     }
   }));
 
-  $window.trigger('scroll');
+  window.onload = function() {
+    $window.trigger('scroll');
+  };
 });
