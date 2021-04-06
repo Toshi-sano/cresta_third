@@ -4,6 +4,7 @@ $(function() {
   
   window.onload = function() {
     toggleHeight = $('.header-visual').outerHeight() - 30;
+    $window.trigger('scroll');
   };
 
   // リサイズ時のtoggleHeightの変化を反映
@@ -37,7 +38,5 @@ $(function() {
       $('h1 a.another').removeClass('alternative');
     }
   }));
-  
-  $window.trigger('scroll');
 
 });
