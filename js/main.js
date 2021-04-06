@@ -1,8 +1,9 @@
 $(function() {
-  var $window = $(window);
+  var $window = $(window),
+      toggleHeight;
   
   window.onload = function() {
-    var toggleHeight = $('.header-visual').outerHeight() - 30;
+    toggleHeight = $('.header-visual').outerHeight() - 30;
   };
 
   // リサイズ時のtoggleHeightの変化を反映
