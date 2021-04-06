@@ -35,7 +35,4 @@ $(function() {
     }
   }));
 
-  window.onload = function() {
-    $window.trigger('scroll');
-  };
 });
